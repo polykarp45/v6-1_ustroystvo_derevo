@@ -525,7 +525,7 @@
 			 <&cru CLK_SATA1_RXOOB>;
 		clock-names = "sata", "pmalive", "rxoob";
 		interrupts = <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>;
-		phys = <&combphy1_usq PHY_TYPE_SATA>;
+		phys = <&combphy1 PHY_TYPE_SATA>;
 		phy-names = "sata-phy";
 		ports-implemented = <0x1>;
 		power-domains = <&power RK3568_PD_PIPE>;
@@ -539,7 +539,7 @@
 			 <&cru CLK_SATA2_RXOOB>;
 		clock-names = "sata", "pmalive", "rxoob";
 		interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>;
-		phys = <&combphy2_psq PHY_TYPE_SATA>;
+		phys = <&combphy2 PHY_TYPE_SATA>;
 		phy-names = "sata-phy";
 		ports-implemented = <0x1>;
 		power-domains = <&power RK3568_PD_PIPE>;
@@ -596,7 +596,7 @@
 			reg = <0x0 0xfd000000 0x0 0x400000>;
 			interrupts = <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>;
 			dr_mode = "host";
-			phys = <&u2phy0_host>, <&combphy1_usq PHY_TYPE_USB3>;
+			phys = <&u2phy0_host>, <&combphy1 PHY_TYPE_USB3>;
 			phy-names = "usb2-phy", "usb3-phy";
 			phy_type = "utmi_wide";
 			power-domains = <&power RK3568_PD_PIPE>;
@@ -2299,7 +2299,7 @@
 		max-link-speed = <2>;
 		msi-map = <0x0 &its 0x0 0x1000>;
 		num-lanes = <1>;
-		phys = <&combphy2_psq PHY_TYPE_PCIE>;
+		phys = <&combphy2 PHY_TYPE_PCIE>;
 		phy-names = "pcie-phy";
 		power-domains = <&power RK3568_PD_PIPE>;
 		ranges = <0x81000000 0x0 0xf4100000 0x0 0xf4100000 0x0 0x100000
